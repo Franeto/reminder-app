@@ -13,8 +13,8 @@ export function Component() {
         <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100">Reminder</h1>
       </header>
       <main className="flex flex-wrap gap-2 items-end">
-        <Reminder label={"Posture Check"} timerMessage={"FIX POSTURE"} audioSrc="../../static/fix-posture.mp3"/>
-        <Reminder label={"Hydration Check"} timerMessage={"DRINK UP"} audioSrc="../../static/drink-water.mp3" />
+        <Reminder label={"Posture Check"} timerMessage={"FIX POSTURE"} audioSrc="../../static/fix-posture.mp3" />
+        <Reminder label={"Hydration Check"} timerMessage={"DRINK UP"} audioSrc="../../static/drink-water.mp3" defaultTime={1800000} />
       </main>
     </div>
   )

@@ -11,11 +11,11 @@ interface ReminderProps {
    label: string;
    timerMessage: string;
    audioSrc: string;
+   defaultTime?: number;
 }
 
-const Reminder = ({ label, timerMessage, audioSrc }: ReminderProps) => {
-   const absoluteTime = 900000
-   let time = useRef(absoluteTime);
+const Reminder = ({ label, timerMessage, audioSrc, defaultTime=900000 }: ReminderProps) => {
+   let time = useRef(defaultTime);
    const [start, setStart] = useState(false);
    const [convertedTime, setConvertedTime] = useState(msToTime(time.current));
    const audioRef:any = useRef()
@@ -26,7 +26,7 @@ const Reminder = ({ label, timerMessage, audioSrc }: ReminderProps) => {
 
          //Restarts timer
          if(time.current === -5000) {
-            time.current = absoluteTime
+            time.current = defaultTime
          }
 
          //Plays audio
